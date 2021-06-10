@@ -38,6 +38,7 @@ from srunner.scenarios.object_crash_vehicle import DynamicObjectCrossing
 from srunner.scenarios.object_crash_intersection import VehicleTurningRoute
 from srunner.scenarios.other_leading_vehicle import OtherLeadingVehicle
 from srunner.scenarios.maneuver_opposite_direction import ManeuverOppositeDirection
+from srunner.scenarios.construction_crash_vehicle import ConstructionSetupCrossing
 from srunner.scenarios.junction_crossing_route import SignalJunctionCrossingRoute, NoSignalJunctionCrossingRoute
 
 from srunner.scenariomanager.scenarioatomics.atomic_criteria import (CollisionTest,
@@ -60,7 +61,8 @@ NUMBER_CLASS_TRANSLATION = {
     "Scenario7": SignalJunctionCrossingRoute,
     "Scenario8": SignalJunctionCrossingRoute,
     "Scenario9": SignalJunctionCrossingRoute,
-    "Scenario10": NoSignalJunctionCrossingRoute
+    "Scenario10": NoSignalJunctionCrossingRoute,
+    "Scenario11": ConstructionSetupCrossing,
 }
 
 

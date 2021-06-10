@@ -52,6 +52,8 @@ class ConstructionSetupCrossing(StationaryObjectCrossing):
             randomize=randomize,
             debug_mode=debug_mode,
             criteria_enable=criteria_enable)
+        self.scenario.name = "ConstructionSetupCrossing"
+        self.scenario.scenario_tree.name = "ConstructionSetupCrossing"
 
     def _initialize_actors(self, config):
         """
@@ -153,7 +155,7 @@ class ConstructionSetupCrossing(StationaryObjectCrossing):
             self._ego_vehicle_distance_driven)
 
         # non leaf nodes
-        scenario_sequence = py_trees.composites.Sequence()
+        scenario_sequence = py_trees.composites.Sequence(name="ConstructionSetupCrossing")
 
         # building tree
         scenario_sequence.add_child(actor_stand)
@@ -161,5 +163,4 @@ class ConstructionSetupCrossing(StationaryObjectCrossing):
         for i, _ in enumerate(self.other_actors):
             scenario_sequence.add_child(ActorDestroy(self.other_actors[i]))
         scenario_sequence.add_child(end_condition)
-
         return scenario_sequence
